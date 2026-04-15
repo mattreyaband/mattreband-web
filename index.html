@@ -1,183 +1,109 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mattreya</title>
-    <meta
-      name="description"
-      content="Mattreya — metal moderno con elegancia, tensión y ruina humana."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="background-glow"></div>
-    <header class="site-header">
-      <div class="container nav">
-        <a class="brand" href="#inicio">
-          <span class="brand-mark">M</span>
-          <span class="brand-text">
-            <strong>Mattreya</strong>
-            <small>Modern Metal • Santiago, Chile</small>
-          </span>
-        </a>
-        <nav class="nav-links">
-          <a href="#concepto">Concepto</a>
-          <a href="#musica">Música</a>
-          <a href="#manifiesto">Manifiesto</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mattreya — Coming Soon</title>
+  <meta name="description" content="Sitio oficial de Mattreya. Próximamente." />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg2: #0a0a0a;
+      --text: #f4e9e9;
+      --muted: #9b8b8b;
+      --red: #a11212;
+      --red-soft: rgba(161, 18, 18, 0.22);
+      --line: rgba(255,255,255,0.07);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(140, 10, 10, 0.30), transparent 30%),
+        linear-gradient(180deg, #0a0a0a 0%, #050505 45%, #020202 100%);
+      color: var(--text);
+      overflow: hidden;
+    }
+    .grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: .18;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      pointer-events: none;
+    }
+    .ring, .ring2 {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(161,18,18,.18);
+      border-radius: 999px;
+      pointer-events: none;
+    }
+    .ring { width: 34rem; height: 34rem; }
+    .ring2 { width: 25rem; height: 25rem; }
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      width: min(100%, 920px);
+      text-align: center;
+      padding: 32px 20px;
+    }
+    .logo {
+      width: min(100%, 720px);
+      height: auto;
+      display: block;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 0 36px rgba(161,18,18,.18));
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      letter-spacing: .45em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: #d97575;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 9vw, 88px);
+      letter-spacing: .18em;
+      font-weight: 700;
+      line-height: .95;
+    }
+    .sub {
+      margin: 18px auto 0;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="ring"></div>
+  <div class="ring2"></div>
 
-    <main id="inicio">
-      <section class="hero container">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Sofisticación violenta</p>
-          <h1>
-            Metal moderno con elegancia,
-            <span>tensión y ruina humana.</span>
-          </h1>
-          <p class="hero-text">
-            Mattreya explora el punto en que la razón deja de ser virtud y se convierte en enfermedad. Riffs densos,
-            pulsación contemporánea y una identidad visual negra y carmesí para narrar el colapso desde dentro.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#musica">Explorar proyecto</a>
-            <a class="button secondary" href="#contacto">Contacto y prensa</a>
-          </div>
-        </div>
-
-        <aside class="hero-card reveal delay-1">
-          <div class="card-head">
-            <div>
-              <p class="label">Identidad</p>
-              <h2>Mattreya</h2>
-            </div>
-            <span class="badge">EP en desarrollo</span>
-          </div>
-
-          <div class="info-grid">
-            <article>
-              <p class="label">Sonido</p>
-              <p>Metal moderno, progresivo y atmosférico.</p>
-            </article>
-            <article>
-              <p class="label">Paleta</p>
-              <p>Negro, carmesí y profundidad mineral.</p>
-            </article>
-            <article>
-              <p class="label">Pulso</p>
-              <p>Groove, tensión rítmica y peso controlado.</p>
-            </article>
-          </div>
-
-          <div class="card-note">
-            Una base limpia para presentar música, concepto, visuales, prensa y contacto en un solo lugar.
-          </div>
-        </aside>
-      </section>
-
-      <section id="concepto" class="section container reveal">
-        <p class="eyebrow">Concepto</p>
-        <h2 class="section-title">La razón como chispa y condena</h2>
-        <p class="section-text">
-          Mattreya no habla del mal como algo externo, sino como una consecuencia humana: la inteligencia, la ambición,
-          la soberbia, la repetición del error. El proyecto se mueve entre lo visceral y lo sofisticado, buscando impacto
-          sin perder identidad.
-        </p>
-
-        <div class="cards three">
-          <article class="panel">
-            <h3>Visión</h3>
-            <p>Una estética sonora y visual que une agresión, precisión y un trasfondo filosófico reconocible.</p>
-          </article>
-          <article class="panel">
-            <h3>Escena</h3>
-            <p>Pensado para verse sólido en vivo, pero también para comunicar con fuerza en contenido audiovisual y plataformas digitales.</p>
-          </article>
-          <article class="panel">
-            <h3>Identidad</h3>
-            <p>Negro y carmesí, tensión formal, símbolos limpios y una narrativa de deterioro humano moderno.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="musica" class="section container reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Música</p>
-            <h2 class="section-title">Canciones que construyen un universo</h2>
-            <p class="section-text">Esta sección puede evolucionar luego hacia Spotify, YouTube, videos, singles o discografía completa.</p>
-          </div>
-          <span class="pill">Material en desarrollo</span>
-        </div>
-
-        <div class="cards tracks">
-          <article class="panel track"><span>Track 01</span><h3>Corre</h3><p>Rabia, huida y fractura interna.</p></article>
-          <article class="panel track"><span>Track 02</span><h3>Escoria</h3><p>Violencia moral y reflejo humano.</p></article>
-          <article class="panel track"><span>Track 03</span><h3>IA</h3><p>Razón, soberbia y colapso.</p></article>
-          <article class="panel track"><span>Track 04</span><h3>Insomnia</h3><p>Noche mental, eco y resistencia.</p></article>
-          <article class="panel track"><span>Track 05</span><h3>Distantes</h3><p>Ruina emocional y separación.</p></article>
-          <article class="panel track"><span>Track 06</span><h3>Muenya II</h3><p>Continuidad, mito y deformación.</p></article>
-        </div>
-      </section>
-
-      <section id="manifiesto" class="section container reveal">
-        <div class="manifesto panel wide">
-          <p class="eyebrow">Manifiesto</p>
-          <blockquote>
-            “Mattreya es la crónica sonora de un mal que no viene de fuera, sino de la chispa de razón que nos hace humanos y,
-            a la vez, nos condena a repetir los mismos errores.”
-          </blockquote>
-          <p class="section-text small">Esta frase se puede pulir después para bio corta, press kit o home definitiva.</p>
-        </div>
-      </section>
-
-      <section id="contacto" class="section container reveal">
-        <div class="contact-layout">
-          <div>
-            <p class="eyebrow">Contacto</p>
-            <h2 class="section-title">Una base sólida para prensa, shows y lanzamientos</h2>
-            <p class="section-text">
-              Esta primera versión ya te sirve para publicar y luego mejorar. El siguiente paso será integrar logo definitivo,
-              fotos, enlaces reales y un press kit descargable.
-            </p>
-
-            <div class="socials">
-              <a class="button secondary" href="#">Instagram</a>
-              <a class="button secondary" href="#">YouTube</a>
-              <a class="button secondary" href="mailto:contacto@mattreyaband.com">Email</a>
-            </div>
-          </div>
-
-          <div class="panel checklist">
-            <p class="label">Siguiente etapa</p>
-            <ul>
-              <li>Integrar logo oficial de Mattreya.</li>
-              <li>Agregar fotos de banda o visuales.</li>
-              <li>Conectar Spotify, YouTube e Instagram reales.</li>
-              <li>Subir press kit o dossier descargable.</li>
-              <li>Apuntar el dominio y dejar la web publicada.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Mattreya. Todos los derechos reservados.</p>
-        <p>Diseñado con una estética sobria, agresiva y contemporánea.</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+  <main class="wrap">
+    <section class="card">
+      <img class="logo" src="logo.jpg" alt="Logo Mattreya" />
+      <p class="eyebrow">Sitio oficial</p>
+      <h1>COMING SOON</h1>
+      <p class="sub">Mattreya está preparando su lanzamiento oficial.</p>
+    </section>
+  </main>
+</body>
 </html>
