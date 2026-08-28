@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mattreya — Sitio oficial</title>
+  <meta name="description" content="Mattreya. Metal alternativo desde Santiago, Chile. Primer EP en camino." />
+
+  <!-- Para que se vea bien al compartir el enlace en WhatsApp/Instagram -->
+  <meta property="og:title" content="Mattreya — Sitio oficial" />
+  <meta property="og:description" content="Metal alternativo desde Santiago, Chile. Primer EP en camino." />
+  <meta property="og:image" content="logo.jpg" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --text: #f4e9e9;
+      --muted: #9b8b8b;
+      --red: #a11212;
+      --red-soft: #d97575;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(140, 10, 10, 0.30), transparent 30%),
+        linear-gradient(180deg, #0a0a0a 0%, #050505 45%, #020202 100%);
+      color: var(--text);
+    }
+    .grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: .18;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      pointer-events: none;
+    }
+    .ring, .ring2 {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(161,18,18,.18);
+      border-radius: 999px;
+      pointer-events: none;
+    }
+    .ring { width: 34rem; height: 34rem; }
+    .ring2 { width: 25rem; height: 25rem; }
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      width: min(100%, 920px);
+      text-align: center;
+      padding: 20px;
+    }
+    .logo {
+      width: min(100%, 680px);
+      max-height: 38vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 0 36px rgba(161,18,18,.18));
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      letter-spacing: .45em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--red-soft);
+    }
+    h1 {
+      margin: 0;
+      /* Tamaño: mínimo en celular, escalado, máximo en escritorio */
+      font-size: clamp(18px, 3.4vw, 28px);
+      /* Color del título. Alternativas más abajo. */
+      color: #8a7f7f;
+      letter-spacing: .34em;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    .sub {
+      margin: 18px auto 0;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ---- Formulario de correo ---- */
+    .signup {
+      margin: 36px auto 0;
+      max-width: 460px;
+    }
+    .signup-label {
+      margin: 0 0 14px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .signup-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup input[type="email"] {
+      flex: 1 1 240px;
+      min-width: 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(161,18,18,.35);
+      border-radius: 2px;
+      padding: 13px 14px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .signup input[type="email"]::placeholder { color: #6b5f5f; }
+    .signup input[type="email"]:focus {
+      border-color: var(--red-soft);
+      background: rgba(255,255,255,0.06);
+    }
+    .signup button {
+      background: transparent;
+      border: 1px solid var(--red-soft);
+      border-radius: 2px;
+      color: var(--text);
+      padding: 13px 24px;
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .signup button:hover {
+      background: var(--red-soft);
+      color: #0a0a0a;
+    }
+    .signup-msg {
+      margin: 16px 0 0;
+      font-size: 13px;
+      color: var(--red-soft);
+      min-height: 20px;
+    }
+    .hp { position: absolute; left: -9999px; }
+
+    /* ---- Redes ---- */
+    .social {
+      margin: 40px 0 0;
+      display: flex;
+      gap: 26px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .social a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .social a:hover { color: var(--text); }
+
+    .contact {
+      margin: 26px 0 0;
+      font-size: 12px;
+      color: #6b5f5f;
+      letter-spacing: .08em;
+    }
+    .contact a { color: inherit; text-decoration: none; }
+    .contact a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="ring"></div>
+  <div class="ring2"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <img class="logo" src="logo.jpg" alt="Mattreya" />
+
+      <p class="eyebrow">Sitio oficial</p>
+      <h1>PRÓXIMAMENTE</h1>
+      <p class="sub">
+        Metal alternativo / moderno<br />
+        Primer EP en proceso
+      </p>
+
+      <!-- ============================================
+           FORMULARIO
+           Los correos llegan a Formspree y a la bandeja
+           de mattreyaband@gmail.com
+           ============================================ -->
+      <div class="signup">
+        <p class="signup-label">
+          Deja tu correo y entérate antes que nadie.
+        </p>
+
+        <form id="signup-form" action="https://formspree.io/f/xdeoobwl" method="POST">
+          <div class="signup-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="tu@correo.com"
+              required
+              autocomplete="email"
+            />
+            <button type="submit">Avísame</button>
+          </div>
+          <!-- Trampa anti-spam: invisible para personas, los bots la rellenan -->
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </form>
+
+        <p class="signup-msg" id="signup-msg"></p>
+      </div>
+
+      <!-- ============================================
+           REDES
+           Cuando tengan YouTube o Spotify, se agregan aquí
+           con el mismo formato de la línea de Instagram.
+           ============================================ -->
+      <nav class="social">
+        <a href="https://instagram.com/mattreyaband" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+
+      <p class="contact">
+        <a href="mailto:mattreyaband@gmail.com">mattreyaband@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const msg = document.getElementById('signup-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = 'Enviando...';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          msg.textContent = 'Listo. Te avisamos cuando salga.';
+        } else {
+          msg.textContent = 'Algo falló. Intenta de nuevo.';
+        }
+      } catch (err) {
+        msg.textContent = 'Algo falló. Intenta de nuevo.';
+      }
+    });
+  </script>
+</body>
+</html>
