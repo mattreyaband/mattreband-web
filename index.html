@@ -83,10 +83,13 @@
     }
     h1 {
       margin: 0;
-      font-size: clamp(38px, 8vw, 76px);
-      letter-spacing: .18em;
-      font-weight: 700;
-      line-height: .95;
+      /* Tamaño: mínimo en celular, escalado, máximo en escritorio */
+      font-size: clamp(18px, 3.4vw, 28px);
+      /* Color del título. Alternativas más abajo. */
+      color: #8a7f7f;
+      letter-spacing: .34em;
+      font-weight: 400;
+      line-height: 1.2;
     }
     .sub {
       margin: 18px auto 0;
@@ -202,15 +205,15 @@
 
       <!-- ============================================
            FORMULARIO
-           Reemplaza TU_ENDPOINT por el que te da Formspree.
-           Ejemplo: https://formspree.io/f/abcdwxyz
+           Los correos llegan a Formspree y a la bandeja
+           de mattreyaband@gmail.com
            ============================================ -->
       <div class="signup">
         <p class="signup-label">
           Deja tu correo y entérate antes que nadie.
         </p>
 
-        <form id="signup-form" action="https://formspree.io/f/TU_ENDPOINT" method="POST">
+        <form id="signup-form" action="https://formspree.io/f/xdeoobwl" method="POST">
           <div class="signup-row">
             <input
               type="email"
